@@ -139,8 +139,29 @@
             <div class="row justify-content-center">
             <div class="col-12 col-md-10">
 
-            <div>
-                <h2 class="title is-3 has-text-centered" style="margin-top: -50px; margin-bottom: -10px;">Qualitative Results</h2>
+            <div class="mt-0">
+                <h2 class="title is-3 has-text-centered" style="margin-top: -50px;">Overview</h2>
+            
+                <p class="container-fluid content">
+                    Our pipeline converts any mesh into its articulated counterpart, including hand-crafted meshes with part geometry, surface meshes generated through text-to-3D or image-to-3D methods and meshes reconstructed from real-world objects. 
+                    The process involves three main steps:
+                    <ul style="list-style-type: disc;">
+                        <li> 
+                            <b>Movable Part Segmentation</b> step employs the method proposed by <a href="https://colin97.github.io/PartSLIP_page/" class="link-secondary">PartSlip++</a> to segment movable parts from the input mesh.  
+                        </li>
+                        <li>
+                            <b>Articulation Estimation</b> step extracts the articulation parameters for each movable part by leveraging geometric cues and prior knowledge from visual and language foundation models.
+                        </li>
+                        <li>
+                            <b>Refinement</b> step enhances the geometry and texture of the articulated object with geometry-aware 2D diffusion model <a href="https://aigc3d.github.io/richdreamer/" class="link-secondary">Richdreamer</a>, guided by SDS loss to distill the diffusion model's 3D prior.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+
+
+            <div class="mt-6">
+                <h2 class="title is-3 has-text-centered" style="margin-bottom: -10px;">Qualitative Results</h2>
 
                 <div class="container">
                     <h3 class="subtitle is-5 has-text-centered pt-5">
@@ -250,7 +271,7 @@
                     <div class="col-12 text-center">
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-6 px-md-3">
-                                <div><b>Laptop Demos</b></div>
+                                <div><b>Laptop Manipulation Demos</b></div>
                                 <div class="row justify-content-center">
                                     <div class="col-6">
                                         <img src="./assets/videos/policy/laptop_p1.gif" width="100%">
@@ -261,7 +282,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 px-md-3">
-                                <div><b>Bucket Demos</b></div>
+                                <div><b>Bucket Manipulation Demos</b></div>
                                 <div class="row justify-content-center">
                                     <div class="col-6">
                                         <img src="./assets/videos/policy/bucket_p1.gif" width="100%">
